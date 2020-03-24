@@ -5,7 +5,6 @@ class QuestionDAO {
             _question.create({
                 _question : question.question ,
                 _answerPath : question.answerPath, 
-                _adminId : question.adminId,
                 _domain : question.domainId,
                 _modelInfo : question.modelInfoId
                 },

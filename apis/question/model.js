@@ -1,12 +1,12 @@
 const questionDAO = require('./dao').QuestionDAO;
 const domain = require('../domain/model').Domain;
 const modelInfo = require('../modelInfo/model').ModelInfo;
+const MLmodel  = require('../../MachineLearning/PredictionModel');
 
 module.exports.Question = class Question {
-    constructor(question , answerPath, adminId , domainId, modelInfoId) {
+    constructor(question , answerPath , domainId, modelInfoId) {
         this.question = question;
         this.answerPath = answerPath;
-        this.adminId = adminId;
         this.domainId = domainId;
         this.modelInfoId=modelInfoId;
     }
@@ -41,6 +41,16 @@ module.exports.Question = class Question {
             let question = await questionDAO.getById(id);
             if(!question) reject('No document found')
             else resolve(question);
+        });
+    }
+    static async getAnswer(questionId,dataFilePath) {
+        return new Promise(async (resolve, reject) => {
+            let question = await questionDAO.getById(questionId);
+            let resultFile = 'Result\\'+Date.now()+'.csv';
+            await MLmodel.predict(question._modelInfo._modelFilePath,question._modelInfo._model,dataFilePath,resultFile);
+            await MLmodel.getresult(question._answerPath,resultFile);
+            if(!question) reject('Error answering')
+            else resolve(resultFile);
         });
     }
     static async get() {

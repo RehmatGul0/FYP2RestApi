@@ -13,7 +13,7 @@ class Model{
             };
             PythonShell.run(algorithmInfo._path, options, (error, result) => {
                 if (error) reject(error);
-                else resolve(result);
+                else resolve(result[0]);
             });
         });
     }

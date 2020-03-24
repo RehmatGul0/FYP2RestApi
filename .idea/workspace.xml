@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab698c41-9ed2-4ff5-820d-f198b99400e9" name="Default Changelist" comment="" />
+    <list default="true" id="ab698c41-9ed2-4ff5-820d-f198b99400e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithms/1584727020980KmeansModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MachineLearning/MachineLearningModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/MachineLearning/ClusteringModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelData/University Data Clean.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelFiles/UserDataModeling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/modelInfo/servicesAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/modelInfo/servicesAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/question/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/question/dao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/question/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/question/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/question/servicesAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/question/servicesAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/question/servicesUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/question/servicesUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/user/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/user/dao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/user/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/user/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apis/user/servicesUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/apis/user/servicesUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/helper/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/userCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/userCheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ModelInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ModelInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Question.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multer/storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/multer/storage.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +35,18 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="F:\FAST NU\Semester 8\Project-II CS-492\E Portal REST-APIS\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1ZLjoQ4iy6lvDVxQ5Atsig4UjNo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -42,7 +74,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584625443033</updated>
-      <workItem from="1584625450646" duration="18201000" />
+      <workItem from="1584625450646" duration="19610000" />
+      <workItem from="1584866497410" duration="32075000" />
     </task>
     <servers />
   </component>
@@ -50,13 +83,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="427" y="178" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584711295014">
+    <state x="427" y="178" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585036302859">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="427" y="178" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1584711295014" />
-    <state x="339" y="167" key="run.anything.popup" timestamp="1584716830983">
+    <state x="427" y="178" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1585036302859" />
+    <state x="390" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1584866520347">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="167" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1584716830983" />
+    <state x="390" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1584866520347" />
+    <state x="339" y="167" key="run.anything.popup" timestamp="1585004706718">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="167" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585004706718" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584908528608">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1584908528608" />
   </component>
 </project>

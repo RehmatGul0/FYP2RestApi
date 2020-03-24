@@ -1,5 +1,5 @@
-const getToken = require("../api/auth/token").getTokenUser;
-const createToken = require("../api/auth/token").createTokenUser;
+const getToken = require("../helper/token").getTokenUser;
+const createToken = require("../helper/token").createTokenUser;
 
 module.exports.checkUser = async (req, res, next) => {
   try {

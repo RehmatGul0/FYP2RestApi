@@ -17,29 +17,30 @@ var uploadModelInfo= multer.diskStorage({
     }
   })
 
-  var storageUser = multer.diskStorage({
+  var uploadUserData = multer.diskStorage({
     destination: function (req, file, cb) {
       if (!fs.existsSync('UserData/'+req.userId)){
-        fs.mkdirSync('UserData/'+req.userId);
-    }
+        fs.mkdirSync('UserData/'+req.userId, {recursive: true});
+      }
       cb(null, 'UserData/'+req.userId)
     },
     filename: function (req, file, cb) {
-      cb(null, 'userDataSet.csv')
+      cb(null, Date.now()+file.originalname)
     }
   })
 
   var uploadAnswerFile = multer.diskStorage({
   destination: function (req, file, cb) {
-    if (!fs.existsSync('Education Scripts')){
-      fs.mkdirSync('Education Scripts');
+    if (!fs.existsSync('Answer Scripts')){
+      fs.mkdirSync('Answer Scripts');
     }
-    cb(null, 'Education Scripts')
+    cb(null, 'Answer Scripts')
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname)
+    cb(null, Date.now()+file.originalname)
   }
-  })
+  });
+
   const uploadAlgorithmFile = multer.diskStorage({
   destination: function (req, file, cb) {
     if (!fs.existsSync('Algorithms')){
@@ -50,8 +51,8 @@ var uploadModelInfo= multer.diskStorage({
   filename: function (req, file, cb) {
     cb(null, Date.now()+file.originalname)
   }
-  })
+  });
 module.exports.uploadAlgorithm = multer({ storage: uploadAlgorithmFile })
 module.exports.uploadAnswerFile = multer({ storage: uploadAnswerFile })
 module.exports.uploadAdmin = multer({ storage: uploadModelInfo })   
-module.exports.uploadUser = multer({ storage: storageUser })
+module.exports.uploadUserData = multer({ storage: uploadUserData })

@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('./model').User;
 const createTokenUser = require('../../helper/token').createTokenUser;
-var passport = require('passport');
+const passport = require('passport');
+
 router.post('/signup', async (req, res) => {
     try {
         const user = new User(req.body.name, req.body.email, req.body.password,false);
@@ -31,5 +32,7 @@ router.post('/signin', (req, res,next) => {
         }
     })(req, res,next);
 });
+
+
 
 module.exports = router;

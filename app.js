@@ -4,21 +4,22 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
-var cors = require('cors')
+const cors = require('cors')
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 
 const userAuth = require('./apis/user/servicesUser');
-//const userQuestion = require('./apis/question/servicesUser');
+const userQuestion = require('./apis/question/servicesUser');
+const userData = require('./apis/data/serviceUser');
 
 const adminAuth = require('./apis/user/servicesAdmin');
-const adminDomain = require('./apis/user/servicesAdmin');
+const adminDomain = require('./apis/domain/servicesAdmin');
 const adminAlgorithm = require('./apis/algorithm/servicesAdmin');
 const adminQuestion = require('./apis/question/servicesAdmin');
 const adminModelInfo = require('./apis/modelInfo/servicesAdmin');
-//const UserDataset = require('./api/user/routes/userdataset');
 
-mongoose.connect(process.env.db,{ useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.set('useFindAndModify', false);
+mongoose.connect(process.env.db,{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false });
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -34,14 +35,13 @@ app.use(function(req, res, next) {
 require('./helper/passport')(passport);
 
 app.use('/user/auth', userAuth);
-//app.use('/user/question',userQuestion);
+app.use('/user/question', userQuestion);
+app.use('/user/data',userData);
 
 app.use('/admin/auth',adminAuth);
 app.use('/admin/domain',adminDomain);
 app.use('/admin/algorithm',adminAlgorithm);
 app.use('/admin/question',adminQuestion);
 app.use('/admin/modelinfo',adminModelInfo);
-//app.use('/user/userdataset',UserDataset);
-
 
 module.exports.app = app;

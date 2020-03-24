@@ -7,10 +7,8 @@ const upload = require('../../multer/storage').uploadAnswerFile.single('answerFi
 //router.use(adminCheck);
 router.post('/add',upload, async (req, res) => {
     try {
-        const question = new Question(req.body.question, req.file.filename,
-            req.adminEmail , req.body.domainId, req.body.modelInfoId.replace('"','').replace('"',''));
-        console.log(question)
-        await question.validate(req.body.domainId,req.body.modelInfoId.replace('"','').replace('"',''),);
+        const question = new Question(req.body.question, req.file.path, req.body.domainId, req.body.modelInfoId);
+        await question.validate(req.body.domainId,req.body.modelInfoId);
         await question.save();
 
         res.status(200).send({

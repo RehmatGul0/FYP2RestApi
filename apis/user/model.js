@@ -28,4 +28,22 @@ module.exports.User = class User {
             else resolve(user);
         });
     }
+    static async getById(id) {
+        return new Promise(async (resolve, reject) => {
+            let user = await userDao.getById(id);
+            if(!user) reject('No document found')
+            else resolve(user);
+        });
+    }
+    static async addFileInfo(userId,questionId,filePath){
+        return new Promise(async (resolve, reject) => {
+            try{
+                await userDao.addFileInfo(userId,questionId,filePath);
+                resolve();
+            }
+            catch (error) {
+                reject('Error adding file');
+            }
+        });
+    }
 }

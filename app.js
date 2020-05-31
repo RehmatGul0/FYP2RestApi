@@ -20,6 +20,7 @@ const adminModelInfo = require('./apis/modelInfo/servicesAdmin');
 
 mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.db,{ useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false });
+mongoose.set('useCreateIndex', true);
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:false}));

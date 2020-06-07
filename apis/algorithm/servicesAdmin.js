@@ -9,10 +9,6 @@ router.post('/add',upload, async (req, res) => {
     try {
         const algorithm = new Algorithm(req.body.name,req.file.filename);
         await algorithm.save();
-
-        /*res.cookie('token',req.cookies['token']).status(200).send({
-            'result': 'success'
-        });*/
         res.status(200).send({
             'result': 'success'
         });
@@ -26,10 +22,6 @@ router.post('/add',upload, async (req, res) => {
 router.get('/get', async (req, res, next) => {
     try {
         let algorithms = await Algorithm.get();
-
-        /*res.cookie('token',req.cookies['token']).status(200).send({
-            'result': algorithms
-        });*/
         res.status(200).send({
             'result': algorithms
         });

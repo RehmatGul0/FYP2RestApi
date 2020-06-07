@@ -3,11 +3,12 @@ const router = express.Router();
 const userCheck = require('../../middleware/userCheck').checkUser;
 const userData = require('../../multer/storage').uploadUserData.single('dataFile');
 const User = require('../user/model').User;
+const sanitizeUserData = require('../../DataPreprocessing/SanitizeUserData').sanitizeUserData;
 router.post('/upload-data',userCheck,userData, async (req, res) => {
     try {
-        console.log(req.body)
+        await sanitizeUserData.preprocess(req.file.path,req.body.featureMapping);
+
         await User.addFileInfo(req.userId,req.body.questionId,req.file.path);
-        console.log('1')
         res.status(200).send({
             'result': 'success'
         });
@@ -20,7 +21,6 @@ router.post('/upload-data',userCheck,userData, async (req, res) => {
 });
 router.get('/get-data',userCheck, async (req, res) => {
     try {
-
         let user = await User.getById(req.userId);
         let userDataFile = user._dataFiles.map(dataFile=>{
             return {'file':dataFile._path.split('\\')[2],'_id':dataFile._id,'_questionId':dataFile._question,'path':dataFile._path}

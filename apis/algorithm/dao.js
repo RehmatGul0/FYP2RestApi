@@ -2,7 +2,6 @@ const _algorithm = require('../../models/Algorithm').Algorithm;
 class AlgorithmDAO {
     async add(algorithm) {
         return new Promise(async (resolve, reject) => {
-            console.log(algorithm)
             _algorithm.create({
                     _name: algorithm.name,
                     _path:algorithm.path

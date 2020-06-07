@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const Question = require('./model').Question;
 const userCheck = require('../../middleware/userCheck').checkUser;
-const userData = require('../../multer/storage').uploadUserData.single('dataFile');
-const User = require('../user/model').User;
+var path = require('path');
 // //router.use(userCheck);
 router.post('/getAnswer',userCheck,async (req,res)=>{
     try {
          let resultFile = await Question.getAnswer(req.body.questionId,req.body.path);
          console.log(resultFile)
-         res.status(200).sendfile(resultFile);
+         res.status(200).sendFile(path.join(__dirname, '../../', resultFile));
     } catch (error) {
+        console.log(error)
          res.status(400).send({
              'result': 'Error Fetching File'
          });
